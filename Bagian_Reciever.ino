@@ -4,6 +4,7 @@ LiquidCrystal lcd(13, 12, 11, 10, 9, 8);
 void setup() {
  lcd.begin(20,4);
  Serial.begin(9600);
+ lcd.setCursor(0,0);
  lcd.print("wireless Serial ");
  lcd.setCursor(0,1);
  lcd.print("communication via 2.4 GHz");
@@ -14,6 +15,7 @@ void setup() {
 void loop() {
   int TEMP_VALUE=Serial.read();
   lcd.setCursor(0,3);
+  lcd.print("Temp. in 0C:");
   lcd.setCursor(13,3);
   lcd.print(TEMP_VALUE);
   delay(100);
